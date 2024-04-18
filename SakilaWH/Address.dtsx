@@ -1,0 +1,3267 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/19/2024 8:17:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-UJE1B5J"
+  DTS:CreatorName="DESKTOP-UJE1B5J\Admin"
+  DTS:DTSID="{4769BA3B-671B-483A-89D8-3087B5298B6F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{30E513BA-C9EC-4DD7-AB57-CC23A1D3D8C3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3878C6FC-688D-4CFC-95BE-CA1876320B78}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1251"
+          DTS:ConnectionString="D:\Games\etc\work\bdsm\lab2WH\SakilaWH\adressOriginalErrors.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="address_id"
+              DTS:DTSID="{059FA52F-0E14-41AF-8003-474E2781162A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="address"
+              DTS:DTSID="{7C60DB00-38D3-4F6D-81FC-5F4A4C06C2D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="district"
+              DTS:DTSID="{FEF3A2B7-947B-4640-AB0B-6197597C325C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="postal_code"
+              DTS:DTSID="{B2C2B7B0-8E82-4141-AD03-5EC081115DC1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{B9351732-5A3A-4A1C-9400-DFD8304A8345}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country"
+              DTS:DTSID="{0AD883C2-0DED-4005-AAFB-63E8FD35FADC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{54494A47-075F-42C9-A39C-900AAB12AAA9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{05E6E853-AD8C-44A0-9B9B-12C88A905797}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B6E9FF56-3080-442A-B3A5-3AA01FA1B4CA}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1251"
+          DTS:ConnectionString="D:\Games\etc\work\bdsm\lab2WH\SakilaWH\adressDMErrors.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="bussiness_address_id"
+              DTS:DTSID="{11BA502F-F22E-4D2D-AEE8-FCDCFDE40EF5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="address"
+              DTS:DTSID="{3293B3FA-22CE-483B-A3CA-18DCBE84A922}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="district"
+              DTS:DTSID="{90BF61C9-714F-4604-9642-95E56F6BF21D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{B3C327D3-C7BC-4E57-B8A0-7E1A2110F2B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country"
+              DTS:DTSID="{045CF0ED-0AD2-4B20-9095-A70F25A666CF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="postal_code"
+              DTS:DTSID="{6B4ED919-2282-4707-8650-C5AB8B28D05A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StartDate"
+              DTS:DTSID="{F7BD4C05-7FF3-438C-8D58-46FA960A63BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{A403AF89-B8F6-41BD-B10C-157605757D23}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{E6574265-AB09-44ED-BF83-E82511C5B6EF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Loading into address Stagging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{566AD542-C6B2-4A98-A225-D44C1326C269}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loading into address Stagging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Loading into address Stagging\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into address Stagging\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[address_id]"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[address_id]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].Columns[address]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[address]"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].Columns[district]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="district"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[district]"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[district]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].Columns[postal_code]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="postal_code"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[postal_code]"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[postal_code]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].Columns[city]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[city]"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].Columns[country]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Loading into address Stagging\Loading address in Stagging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Loading into address Stagging\Loading address in Stagging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[address_id]"
+                      dataType="i2"
+                      name="address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      name="district" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="postal_code" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Loading into address Stagging\Loading address from DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Loading address from DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[address]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into address Stagging\Loading address from DB.Connections[OleDbConnection]"
+                  connectionManagerID="{AD0BE5F6-8FAC-4C8E-AB85-B14A396D1B91}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.sakila]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[address_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[address_id]"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[address_id]"
+                      name="address_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[address]"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[address]"
+                      name="address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[district]"
+                      length="20"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[district]"
+                      name="district"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[city_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[city_id]"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[city_id]"
+                      name="city_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[postal_code]"
+                      length="10"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[postal_code]"
+                      name="postal_code"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[address_id]"
+                      dataType="i2"
+                      name="address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[address2]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="address2" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      name="district" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[city_id]"
+                      dataType="i2"
+                      name="city_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="postal_code" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].ExternalColumns[last_update]"
+                      dataType="dbTimeStamp"
+                      name="last_update" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[address_id]"
+                      name="address_id" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[address]"
+                      name="address" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[district]"
+                      name="district" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[city_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[city_id]"
+                      name="city_id" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[postal_code]"
+                      name="postal_code" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into address Stagging\Loading address in Stagging"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Loading address in Stagging"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[address_dm]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into address Stagging\Loading address in Stagging.Connections[OleDbConnection]"
+                  connectionManagerID="{E18627C0-D448-4B02-810E-5603E81500FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.Sakila_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].Columns[address]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].Columns[district]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="district"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[district]"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[district]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].Columns[postal_code]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="postal_code"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[postal_code]"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[postal_code]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[bussiness_address_id]"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[address_id]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].Columns[city]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[country]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[address_id]"
+                      dataType="i2"
+                      name="address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[bussiness_address_id]"
+                      dataType="i2"
+                      name="bussiness_address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      name="district" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input].ExternalColumns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="postal_code" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Stagging\Loading address in Stagging.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Stagging\Loading address in Stagging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading address in Stagging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Stagging\Loading address in Stagging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into address Stagging\Loading city from DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Loading city from DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[city]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into address Stagging\Loading city from DB.Connections[OleDbConnection]"
+                  connectionManagerID="{AD0BE5F6-8FAC-4C8E-AB85-B14A396D1B91}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.sakila]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].Columns[city_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].ExternalColumns[city_id]"
+                      lineageId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].Columns[city_id]"
+                      name="city_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].Columns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].Columns[country_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].ExternalColumns[country_id]"
+                      lineageId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].Columns[country_id]"
+                      name="country_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].ExternalColumns[city_id]"
+                      dataType="i2"
+                      name="city_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].ExternalColumns[country_id]"
+                      dataType="i2"
+                      name="country_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].ExternalColumns[last_update]"
+                      dataType="dbTimeStamp"
+                      name="last_update" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Error Output].Columns[city_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Error Output].Columns[city_id]"
+                      name="city_id" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Error Output].Columns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Error Output].Columns[city]"
+                      name="city" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Error Output].Columns[country_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Error Output].Columns[country_id]"
+                      name="country_id" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into address Stagging\Loading country from DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Loading country from DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[country]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into address Stagging\Loading country from DB.Connections[OleDbConnection]"
+                  connectionManagerID="{AD0BE5F6-8FAC-4C8E-AB85-B14A396D1B91}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.sakila]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].Columns[country_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].ExternalColumns[country_id]"
+                      lineageId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].Columns[country_id]"
+                      name="country_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].Columns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].ExternalColumns[country_id]"
+                      dataType="i2"
+                      name="country_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].ExternalColumns[last_update]"
+                      dataType="dbTimeStamp"
+                      name="last_update" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Error Output].Columns[country_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Error Output].Columns[country_id]"
+                      name="country_id" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Error Output].Columns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Error Output].Columns[country]"
+                      name="country" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into address Stagging\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into address Stagging\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join.Inputs[Merge Join Left Input].Columns[country_id]"
+                      cachedDataType="i2"
+                      cachedName="country_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Loading into address Stagging\Sort 1.Outputs[Sort Output].Columns[country_id]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join.Inputs[Merge Join Left Input].Columns[city_id]"
+                      cachedDataType="i2"
+                      cachedName="city_id"
+                      lineageId="Package\Loading into address Stagging\Sort 1.Outputs[Sort Output].Columns[city_id]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join.Inputs[Merge Join Left Input].Columns[city]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      lineageId="Package\Loading into address Stagging\Sort 1.Outputs[Sort Output].Columns[city]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Loading into address Stagging\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join.Inputs[Merge Join Right Input].Columns[country_id]"
+                      cachedDataType="i2"
+                      cachedName="country_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Loading into address Stagging\Sort 2.Outputs[Sort Output].Columns[country_id]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join.Inputs[Merge Join Right Input].Columns[country]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      lineageId="Package\Loading into address Stagging\Sort 2.Outputs[Sort Output].Columns[country]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output].Columns[city_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output].Columns[city_id]"
+                      name="city_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into address Stagging\Merge Join.Inputs[Merge Join Left Input].Columns[city_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output].Columns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output].Columns[city]"
+                      name="city">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into address Stagging\Merge Join.Inputs[Merge Join Left Input].Columns[city]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output].Columns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output].Columns[country]"
+                      name="country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into address Stagging\Merge Join.Inputs[Merge Join Right Input].Columns[country]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into address Stagging\Merge Join 1"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Left Input].Columns[city_id]"
+                      cachedDataType="i2"
+                      cachedName="city_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[city_id]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Left Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      lineageId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[address_id]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Left Input].Columns[address]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="address"
+                      lineageId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Left Input].Columns[district]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="district"
+                      lineageId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[district]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Left Input].Columns[postal_code]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="postal_code"
+                      lineageId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[postal_code]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Right Input].Columns[city_id]"
+                      cachedDataType="i2"
+                      cachedName="city_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Loading into address Stagging\Sort 3.Outputs[Sort Output].Columns[city_id]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Right Input].Columns[city]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      lineageId="Package\Loading into address Stagging\Sort 3.Outputs[Sort Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Right Input].Columns[country]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      lineageId="Package\Loading into address Stagging\Sort 3.Outputs[Sort Output].Columns[country]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[address_id]"
+                      name="address_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Left Input].Columns[address_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[address]"
+                      name="address">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Left Input].Columns[address]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[district]"
+                      name="district">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Left Input].Columns[district]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[postal_code]"
+                      name="postal_code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Left Input].Columns[postal_code]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[city]"
+                      name="city">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Right Input].Columns[city]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output].Columns[country]"
+                      name="country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Right Input].Columns[country]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into address Stagging\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into address Stagging\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort.Inputs[Sort Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[address_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort.Inputs[Sort Input].Columns[address]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="address"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[address]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort.Inputs[Sort Input].Columns[district]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="district"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[district]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort.Inputs[Sort Input].Columns[city_id]"
+                      cachedDataType="i2"
+                      cachedName="city_id"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[city_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort.Inputs[Sort Input].Columns[postal_code]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="postal_code"
+                      lineageId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[postal_code]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Stagging\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[address_id]"
+                      name="address_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[address_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[address]"
+                      name="address">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[address]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[district]"
+                      name="district">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[district]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[city_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[city_id]"
+                      name="city_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[city_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Loading into address Stagging\Sort.Outputs[Sort Output].Columns[postal_code]"
+                      name="postal_code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output].Columns[postal_code]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into address Stagging\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into address Stagging\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort 1.Inputs[Sort Input].Columns[city_id]"
+                      cachedDataType="i2"
+                      cachedName="city_id"
+                      lineageId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].Columns[city_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort 1.Inputs[Sort Input].Columns[city]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      lineageId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].Columns[city]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort 1.Inputs[Sort Input].Columns[country_id]"
+                      cachedDataType="i2"
+                      cachedName="country_id"
+                      lineageId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].Columns[country_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Stagging\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort 1.Outputs[Sort Output].Columns[city_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Sort 1.Outputs[Sort Output].Columns[city_id]"
+                      name="city_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].Columns[city_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort 1.Outputs[Sort Output].Columns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Sort 1.Outputs[Sort Output].Columns[city]"
+                      name="city">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].Columns[city]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort 1.Outputs[Sort Output].Columns[country_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Sort 1.Outputs[Sort Output].Columns[country_id]"
+                      name="country_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output].Columns[country_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into address Stagging\Sort 2"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into address Stagging\Sort 2.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort 2.Inputs[Sort Input].Columns[country_id]"
+                      cachedDataType="i2"
+                      cachedName="country_id"
+                      lineageId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].Columns[country_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort 2.Inputs[Sort Input].Columns[country]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      lineageId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].Columns[country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Stagging\Sort 2.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort 2.Outputs[Sort Output].Columns[country_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Sort 2.Outputs[Sort Output].Columns[country_id]"
+                      name="country_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].Columns[country_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort 2.Outputs[Sort Output].Columns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Sort 2.Outputs[Sort Output].Columns[country]"
+                      name="country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output].Columns[country]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into address Stagging\Sort 3"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 3"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into address Stagging\Sort 3.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort 3.Inputs[Sort Input].Columns[city_id]"
+                      cachedDataType="i2"
+                      cachedName="city_id"
+                      lineageId="Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output].Columns[city_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort 3.Inputs[Sort Input].Columns[city]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      lineageId="Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output].Columns[city]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into address Stagging\Sort 3.Inputs[Sort Input].Columns[country]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      lineageId="Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output].Columns[country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Stagging\Sort 3.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort 3.Outputs[Sort Output].Columns[city_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Stagging\Sort 3.Outputs[Sort Output].Columns[city_id]"
+                      name="city_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output].Columns[city_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort 3.Outputs[Sort Output].Columns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Sort 3.Outputs[Sort Output].Columns[city]"
+                      name="city">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output].Columns[city]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into address Stagging\Sort 3.Outputs[Sort Output].Columns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Stagging\Sort 3.Outputs[Sort Output].Columns[country]"
+                      name="country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output].Columns[country]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Loading into address Stagging.Paths[Merge Join Output]"
+              endId="Package\Loading into address Stagging\Sort 3.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Loading into address Stagging\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Loading into address Stagging.Paths[Merge Join Output1]"
+              endId="Package\Loading into address Stagging\Loading address in Stagging.Inputs[OLE DB Destination Input]"
+              name="Merge Join Output"
+              startId="Package\Loading into address Stagging\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Loading into address Stagging.Paths[OLE DB Destination Error Output]"
+              endId="Package\Loading into address Stagging\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Destination Error Output"
+              startId="Package\Loading into address Stagging\Loading address in Stagging.Outputs[OLE DB Destination Error Output]" />
+            <path
+              refId="Package\Loading into address Stagging.Paths[OLE DB Source Output]"
+              endId="Package\Loading into address Stagging\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Loading into address Stagging\Loading address from DB.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Loading into address Stagging.Paths[OLE DB Source Output1]"
+              endId="Package\Loading into address Stagging\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Loading into address Stagging\Loading city from DB.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Loading into address Stagging.Paths[OLE DB Source Output2]"
+              endId="Package\Loading into address Stagging\Sort 2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Loading into address Stagging\Loading country from DB.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Loading into address Stagging.Paths[Sort Output]"
+              endId="Package\Loading into address Stagging\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Loading into address Stagging\Sort 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\Loading into address Stagging.Paths[Sort Output1]"
+              endId="Package\Loading into address Stagging\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Loading into address Stagging\Sort 2.Outputs[Sort Output]" />
+            <path
+              refId="Package\Loading into address Stagging.Paths[Sort Output2]"
+              endId="Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Loading into address Stagging\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Loading into address Stagging.Paths[Sort Output3]"
+              endId="Package\Loading into address Stagging\Merge Join 1.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Loading into address Stagging\Sort 3.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Loading into address Warehouse"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5DA80314-2A7C-4775-92CD-EEB5175C2345}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loading into address Warehouse"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Loading into address Warehouse\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Loading into address Warehouse\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Warehouse\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Loading into address Warehouse\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Derived Column.Outputs[Derived Column Output].Columns[StartDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Loading into address Warehouse\Derived Column.Outputs[Derived Column Output].Columns[StartDate]"
+                      name="StartDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[System::StartTime]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[System::StartTime]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Loading into address Warehouse\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Loading into address Warehouse\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Warehouse\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Warehouse\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into address Warehouse\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into address Warehouse\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].Columns[address]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[address]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].Columns[district]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="district"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[district]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[district]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].Columns[city]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[city]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].Columns[country]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].Columns[postal_code]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="postal_code"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[postal_code]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[postal_code]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Loading into address Warehouse\Loading in WH.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Loading into address Warehouse\Loading in WH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].Columns[bussiness_address_id]"
+                      cachedDataType="i2"
+                      cachedName="bussiness_address_id"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[bussiness_address_id]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[bussiness_address_id]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].Columns[StartDate]"
+                      cachedDataType="date"
+                      cachedName="StartDate"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[StartDate]"
+                      lineageId="Package\Loading into address Warehouse\Derived Column.Outputs[Derived Column Output].Columns[StartDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      name="district" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="postal_code" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[bussiness_address_id]"
+                      dataType="i2"
+                      name="bussiness_address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[StartDate]"
+                      dataType="date"
+                      name="StartDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Loading into address Warehouse\Loading from staging"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Loading from staging"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[address_dm]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into address Warehouse\Loading from staging.Connections[OleDbConnection]"
+                  connectionManagerID="{E18627C0-D448-4B02-810E-5603E81500FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.Sakila_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[bussiness_address_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[bussiness_address_id]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[bussiness_address_id]"
+                      name="bussiness_address_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[address]"
+                      length="50"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[address]"
+                      name="address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[district]"
+                      length="20"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[district]"
+                      name="district"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      length="50"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      length="50"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[postal_code]"
+                      length="10"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[postal_code]"
+                      name="postal_code"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[address_id]"
+                      dataType="i2"
+                      name="address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[bussiness_address_id]"
+                      dataType="i2"
+                      name="bussiness_address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      name="district" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="postal_code" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[bussiness_address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[bussiness_address_id]"
+                      name="bussiness_address_id" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[address]"
+                      name="address" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[district]"
+                      name="district" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[city]"
+                      name="city" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[country]"
+                      name="country" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[postal_code]"
+                      name="postal_code" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into address Warehouse\Loading in WH"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Loading in WH"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[address_dm]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into address Warehouse\Loading in WH.Connections[OleDbConnection]"
+                  connectionManagerID="{DC247AC0-66CE-48B2-95D0-A7DF605EE4FA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.Sakila_WH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].Columns[bussiness_address_id]"
+                      cachedDataType="i2"
+                      cachedName="bussiness_address_id"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[bussiness_address_id]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[bussiness_address_id]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].Columns[address]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].Columns[district]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="district"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[district]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[district]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].Columns[city]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].Columns[postal_code]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="postal_code"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[postal_code]"
+                      lineageId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[postal_code]" />
+                    <inputColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].Columns[StartDate]"
+                      cachedDataType="date"
+                      cachedName="StartDate"
+                      externalMetadataColumnId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      lineageId="Package\Loading into address Warehouse\Derived Column.Outputs[Derived Column Output].Columns[StartDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[address_id]"
+                      dataType="i2"
+                      name="address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[bussiness_address_id]"
+                      dataType="i2"
+                      name="bussiness_address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      name="district" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="postal_code" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      dataType="dbTimeStamp"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
+                      dataType="dbTimeStamp"
+                      name="EndDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into address Warehouse\Loading in WH.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Warehouse\Loading in WH.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into address Warehouse\Loading in WH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into address Warehouse\Loading in WH.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Loading into address Warehouse.Paths[Derived Column Output]"
+              endId="Package\Loading into address Warehouse\Loading in WH.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Loading into address Warehouse\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Loading into address Warehouse.Paths[OLE DB Destination Error Output]"
+              endId="Package\Loading into address Warehouse\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Destination Error Output"
+              startId="Package\Loading into address Warehouse\Loading in WH.Outputs[OLE DB Destination Error Output]" />
+            <path
+              refId="Package\Loading into address Warehouse.Paths[OLE DB Source Output]"
+              endId="Package\Loading into address Warehouse\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Loading into address Warehouse\Loading from staging.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Stagging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AF283423-DABC-4C91-AC4B-2628ABD9D934}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Stagging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E18627C0-D448-4B02-810E-5603E81500FC}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE address_dm" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{EF9903C8-190D-4C4C-A837-79F165406A64}"
+      DTS:From="Package\Loading into address Stagging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Loading into address Warehouse" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7F18D159-13F2-4FE5-BB2A-3AB14BBC9C38}"
+      DTS:From="Package\Loading into address Warehouse"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Truncate Stagging" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\Loading into address Stagging"
+          TopLeft="238.055542548774,84.3555549689576" />
+        <NodeLayout
+          Size="230.4,41.6"
+          Id="Package\Loading into address Warehouse"
+          TopLeft="232.49998729676,166.977776616635" />
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Truncate Stagging"
+          TopLeft="264.722207758438,250.799998252258" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="347.477764922767,125.955554968958">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.0222216476774"
+              Start="0,0"
+              End="0,33.5222216476774">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5222216476774" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="347.011097527599,208.577776616635">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.2222216356234"
+              Start="0,0"
+              End="0,34.7222216356234">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.7222216356234" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Loading into address Stagging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Loading into address Stagging\Merge Join"
+          TopLeft="624.326565214899,226.269359019583" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Loading into address Stagging\Sort 2"
+          TopLeft="743.333292719393,114.478787082717" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Loading into address Stagging\Flat File Destination"
+          TopLeft="647.619012234705,404.857140041817" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Loading into address Stagging\Sort"
+          TopLeft="299.722205846122,125.088888019036" />
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Loading into address Stagging\Loading country from DB"
+          TopLeft="702.962924554762,29.3777782800016" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Loading into address Stagging\Sort 3"
+          TopLeft="653.571392861862,310.761902600905" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Loading into address Stagging\Loading address from DB"
+          TopLeft="253.796282429479,31.1037034874125" />
+        <NodeLayout
+          Size="210.4,41.6"
+          Id="Package\Loading into address Stagging\Loading address in Stagging"
+          TopLeft="366.018498520149,400.103701082762" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Loading into address Stagging\Sort 1"
+          TopLeft="525.909062174686,128.266665774716" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Loading into address Stagging\Loading city from DB"
+          TopLeft="484.99997350077,33.3047616731648" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Loading into address Stagging\Merge Join 1"
+          TopLeft="448.809499287654,310.761902600905" />
+        <EdgeLayout
+          Id="Package\Loading into address Stagging.Paths[OLE DB Source Output2]"
+          TopLeft="797.948108637078,70.9777782800016">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.5010088027154"
+              Start="0,0"
+              End="0,36.0010088027154">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.0010088027154" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into address Stagging.Paths[OLE DB Source Output1]"
+          TopLeft="575.654517837728,74.9047616731648">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.3619041015512"
+              Start="0,0"
+              End="0,45.8619041015512">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.8619041015512" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into address Stagging.Paths[OLE DB Source Output]"
+          TopLeft="350.159244137801,72.7037034874125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.3851845316235"
+              Start="0,0"
+              End="0,44.8851845316235">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.8851845316235" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into address Stagging.Paths[OLE DB Destination Error Output]"
+          TopLeft="576.418498520149,423.280420562289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="71.2005137145557,0"
+              Start="0,0"
+              End="63.7005137145557,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="63.7005137145557,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-41.3586493927222,5,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into address Stagging.Paths[Merge Join Output1]"
+          TopLeft="518.009499287654,352.361902600905">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-46.7910007675047,47.7417984818566"
+              Start="0,0"
+              End="-46.7910007675047,40.2417984818566">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.8708992409283" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.8708992409283"
+                    Point2="0,23.8708992409283"
+                    Point3="-4,23.8708992409283" />
+                  <mssgle:LineSegment
+                    End="-42.7910007675047,23.8708992409283" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-42.7910007675047,23.8708992409283"
+                    Point2="-46.7910007675047,23.8708992409283"
+                    Point3="-46.7910007675047,27.8708992409283" />
+                  <mssgle:LineSegment
+                    End="-46.7910007675047,40.2417984818566" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into address Stagging.Paths[Merge Join Output]"
+          TopLeft="689.126565214899,267.869359019583">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.6448276469629,42.8925435813223"
+              Start="0,0"
+              End="17.6448276469629,35.3925435813223">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.4462717906612" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.4462717906612"
+                    Point2="0,21.4462717906612"
+                    Point3="4,21.4462717906612" />
+                  <mssgle:LineSegment
+                    End="13.6448276469629,21.4462717906612" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.6448276469629,21.4462717906612"
+                    Point2="17.6448276469629,21.4462717906612"
+                    Point3="17.6448276469629,25.4462717906612" />
+                  <mssgle:LineSegment
+                    End="17.6448276469629,35.3925435813223" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into address Stagging.Paths[Sort Output3]"
+          TopLeft="653.571392861862,331.561902600905">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-66.361893574208,0"
+              Start="0,0"
+              End="-58.861893574208,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-58.861893574208,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into address Stagging.Paths[Sort Output2]"
+          TopLeft="348.522205846122,166.688888019036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="169.487293441532,144.073014581869"
+              Start="0,0"
+              End="169.487293441532,136.573014581869">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.0365072909347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,68.0365072909347"
+                    Point2="0,72.0365072909347"
+                    Point3="4,72.0365072909347" />
+                  <mssgle:LineSegment
+                    End="165.487293441532,72.0365072909347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="165.487293441532,72.0365072909347"
+                    Point2="169.487293441532,72.0365072909347"
+                    Point3="169.487293441532,76.0365072909347" />
+                  <mssgle:LineSegment
+                    End="169.487293441532,136.573014581869" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into address Stagging.Paths[Sort Output1]"
+          TopLeft="796.533292719393,156.078787082717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87.1400608378269,70.1905719368656"
+              Start="0,0"
+              End="-87.1400608378269,62.6905719368656">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.6007536113618" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.6007536113618"
+                    Point2="0,41.6007536113618"
+                    Point3="-4,41.6007536113618" />
+                  <mssgle:LineSegment
+                    End="-83.1400608378269,41.6007536113618" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83.1400608378269,41.6007536113618"
+                    Point2="-87.1400608378269,41.6007536113618"
+                    Point3="-87.1400608378269,45.6007536113618" />
+                  <mssgle:LineSegment
+                    End="-87.1400608378269,62.6905719368656" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into address Stagging.Paths[Sort Output]"
+          TopLeft="579.109062174687,169.866665774716">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.7508363735462,56.4026932448666"
+              Start="0,0"
+              End="89.7508363735462,48.9026932448666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.428913313421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.428913313421"
+                    Point2="0,33.428913313421"
+                    Point3="4,33.428913313421" />
+                  <mssgle:LineSegment
+                    End="85.7508363735462,33.428913313421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.7508363735462,33.428913313421"
+                    Point2="89.7508363735462,33.428913313421"
+                    Point3="89.7508363735462,37.428913313421" />
+                  <mssgle:LineSegment
+                    End="89.7508363735462,48.9026932448666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Loading into address Stagging\Loading address from DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Loading into address Stagging\Loading address in Stagging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Loading into address Warehouse">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="146.4,41.6"
+          Id="Package\Loading into address Warehouse\Loading in WH"
+          TopLeft="405.769204655902,250.764101382744" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Loading into address Warehouse\Flat File Destination"
+          TopLeft="629.999965578319,252.199998246233" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Loading into address Warehouse\Derived Column"
+          TopLeft="273.07691900776,167.230767041445" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Loading into address Warehouse\Loading from staging"
+          TopLeft="154.230760773406,60.4051278507353" />
+        <EdgeLayout
+          Id="Package\Loading into address Warehouse.Paths[OLE DB Source Output]"
+          TopLeft="241.830760773406,102.005127850735">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.646158234354,65.2256391907095"
+              Start="0,0"
+              End="107.646158234354,57.7256391907095">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.6128195953548" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.6128195953548"
+                    Point2="0,32.6128195953548"
+                    Point3="4,32.6128195953548" />
+                  <mssgle:LineSegment
+                    End="103.646158234354,32.6128195953548" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.646158234354,32.6128195953548"
+                    Point2="107.646158234354,32.6128195953548"
+                    Point3="107.646158234354,36.6128195953548" />
+                  <mssgle:LineSegment
+                    End="107.646158234354,57.7256391907095" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into address Warehouse.Paths[OLE DB Destination Error Output]"
+          TopLeft="552.169204655902,272.282049814488">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.830760922417,0"
+              Start="0,0"
+              End="70.330760922417,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="70.330760922417,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-38.0435257887915,5,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into address Warehouse.Paths[Derived Column Output]"
+          TopLeft="349.47691900776,208.830767041445">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="129.492285648142,41.9333343412988"
+              Start="0,0"
+              End="129.492285648142,34.4333343412988">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.9666671706494" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.9666671706494"
+                    Point2="0,20.9666671706494"
+                    Point3="4,20.9666671706494" />
+                  <mssgle:LineSegment
+                    End="125.492285648142,20.9666671706494" />
+                  <mssgle:CubicBezierSegment
+                    Point1="125.492285648142,20.9666671706494"
+                    Point2="129.492285648142,20.9666671706494"
+                    Point3="129.492285648142,24.9666671706494" />
+                  <mssgle:LineSegment
+                    End="129.492285648142,34.4333343412988" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

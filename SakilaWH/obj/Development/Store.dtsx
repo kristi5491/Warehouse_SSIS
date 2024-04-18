@@ -1,0 +1,3328 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/20/2024 4:21:27 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-UJE1B5J"
+  DTS:CreatorName="DESKTOP-UJE1B5J\Admin"
+  DTS:DTSID="{49FD361D-12A7-41DE-A8F2-0787E980013B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Store"
+  DTS:PackageType="5"
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{D7A7D985-F90D-450B-BEC6-2CEA57EFF962}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Loading into store Stagging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{07965f6e-13f2-49c2-8406-bda587a7eb1a}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loading into store Stagging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Loading into store Stagging\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[store_dm]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into store Stagging\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{E18627C0-D448-4B02-810E-5603E81500FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.Sakila_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Loading into store Stagging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      externalMetadataColumnId="Package\Loading into store Stagging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[address_id]"
+                      lineageId="Package\Loading into store Stagging\Sort.Outputs[Sort Output].Columns[address_id]" />
+                    <inputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[store_id]"
+                      cachedDataType="ui1"
+                      cachedName="store_id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Loading into store Stagging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[bussiness_store_id]"
+                      lineageId="Package\Loading into store Stagging\Sort.Outputs[Sort Output].Columns[store_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Stagging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[store_id]"
+                      dataType="ui1"
+                      name="store_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Stagging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[bussiness_store_id]"
+                      dataType="ui1"
+                      name="bussiness_store_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Stagging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[staff_id]"
+                      dataType="ui1"
+                      name="staff_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Stagging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[address_id]"
+                      dataType="i2"
+                      name="address_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Stagging\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Loading into store Stagging\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Stagging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Stagging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Stagging\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[store]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into store Stagging\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{AD0BE5F6-8FAC-4C8E-AB85-B14A396D1B91}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.sakila]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[manager_staff_id]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[manager_staff_id]"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[manager_staff_id]"
+                      name="manager_staff_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[address_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[address_id]"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[address_id]"
+                      name="address_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_update]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[last_update]"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_update]"
+                      name="last_update"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_id]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[store_id]"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_id]"
+                      name="store_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[store_id]"
+                      dataType="ui1"
+                      name="store_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[manager_staff_id]"
+                      dataType="ui1"
+                      name="manager_staff_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[address_id]"
+                      dataType="i2"
+                      name="address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[last_update]"
+                      dataType="dbTimeStamp"
+                      name="last_update" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[manager_staff_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[manager_staff_id]"
+                      name="manager_staff_id" />
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[address_id]"
+                      name="address_id" />
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[last_update]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[last_update]"
+                      name="last_update" />
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[store_id]"
+                      name="store_id" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Stagging\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into store Stagging\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into store Stagging\Sort.Inputs[Sort Input].Columns[manager_staff_id]"
+                      cachedDataType="ui1"
+                      cachedName="manager_staff_id"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[manager_staff_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Stagging\Sort.Inputs[Sort Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[address_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Stagging\Sort.Inputs[Sort Input].Columns[last_update]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="last_update"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_update]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Stagging\Sort.Inputs[Sort Input].Columns[store_id]"
+                      cachedDataType="ui1"
+                      cachedName="store_id"
+                      lineageId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Stagging\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\Sort.Outputs[Sort Output].Columns[manager_staff_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Stagging\Sort.Outputs[Sort Output].Columns[manager_staff_id]"
+                      name="manager_staff_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[manager_staff_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\Sort.Outputs[Sort Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Stagging\Sort.Outputs[Sort Output].Columns[address_id]"
+                      name="address_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[address_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\Sort.Outputs[Sort Output].Columns[last_update]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Loading into store Stagging\Sort.Outputs[Sort Output].Columns[last_update]"
+                      name="last_update">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_update]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Stagging\Sort.Outputs[Sort Output].Columns[store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Stagging\Sort.Outputs[Sort Output].Columns[store_id]"
+                      name="store_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Loading into store Stagging.Paths[OLE DB Source Output]"
+              endId="Package\Loading into store Stagging\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Loading into store Stagging\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Loading into store Stagging.Paths[Sort Output]"
+              endId="Package\Loading into store Stagging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Loading into store Stagging\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Loading into store Warehouse"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3b4368e3-7f35-4bbc-80cf-90085327f2c6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loading into store Warehouse"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Loading into store Warehouse\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Loading into store Warehouse\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Warehouse\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Loading into store Warehouse\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Derived Column.Outputs[Derived Column Output].Columns[StartDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Loading into store Warehouse\Derived Column.Outputs[Derived Column Output].Columns[StartDate]"
+                      name="StartDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Loading into store Warehouse\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Loading into store Warehouse\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Warehouse\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Warehouse\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Warehouse\Loading from staging"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Loading from staging"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[store_dm]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into store Warehouse\Loading from staging.Connections[OleDbConnection]"
+                  connectionManagerID="{E18627C0-D448-4B02-810E-5603E81500FC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.Sakila_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[bussiness_store_id]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[bussiness_store_id]"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[bussiness_store_id]"
+                      name="bussiness_store_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[staff_id]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[staff_id]"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[staff_id]"
+                      name="staff_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[address_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[address_id]"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[address_id]"
+                      name="address_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[store_id]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[store_id]"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[store_id]"
+                      name="store_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[store_id]"
+                      dataType="ui1"
+                      name="store_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[bussiness_store_id]"
+                      dataType="ui1"
+                      name="bussiness_store_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[staff_id]"
+                      dataType="ui1"
+                      name="staff_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].ExternalColumns[address_id]"
+                      dataType="i2"
+                      name="address_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[bussiness_store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[bussiness_store_id]"
+                      name="bussiness_store_id" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[staff_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[staff_id]"
+                      name="staff_id" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[address_id]"
+                      name="address_id" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Error Output].Columns[store_id]"
+                      name="store_id" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Warehouse\Loading from wh address"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Loading from wh address"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[address_dm]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into store Warehouse\Loading from wh address.Connections[OleDbConnection]"
+                  connectionManagerID="{DC247AC0-66CE-48B2-95D0-A7DF605EE4FA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.Sakila_WH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[address_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[address_id]"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[address_id]"
+                      name="address_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[bussiness_address_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[bussiness_address_id]"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[bussiness_address_id]"
+                      name="bussiness_address_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[address]"
+                      length="50"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[address]"
+                      name="address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[district]"
+                      length="20"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[district]"
+                      name="district"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      length="50"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      length="50"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[postal_code]"
+                      length="10"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[postal_code]"
+                      name="postal_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[StartDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[StartDate]"
+                      name="StartDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[EndDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[EndDate]"
+                      name="EndDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[address_id]"
+                      dataType="i2"
+                      name="address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[bussiness_address_id]"
+                      dataType="i2"
+                      name="bussiness_address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      name="district" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="postal_code" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
+                      dataType="dbTimeStamp"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
+                      dataType="dbTimeStamp"
+                      name="EndDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[address_id]"
+                      name="address_id" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[bussiness_address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[bussiness_address_id]"
+                      name="bussiness_address_id" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[address]"
+                      name="address" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[district]"
+                      name="district" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[city]"
+                      name="city" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[country]"
+                      name="country" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[postal_code]"
+                      name="postal_code" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[StartDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[StartDate]"
+                      name="StartDate" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[EndDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Error Output].Columns[EndDate]"
+                      name="EndDate" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Warehouse\Loading from wh staff"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Loading from wh staff"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[staff]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into store Warehouse\Loading from wh staff.Connections[OleDbConnection]"
+                  connectionManagerID="{AD0BE5F6-8FAC-4C8E-AB85-B14A396D1B91}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.sakila]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[address_id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[address_id]"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[address_id]"
+                      name="address_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[staff_id]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[staff_id]"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[staff_id]"
+                      name="staff_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[store_id]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[store_id]"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[store_id]"
+                      name="store_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[first_name]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      length="45"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[last_name]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      length="45"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[address_id]"
+                      dataType="i2"
+                      name="address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[staff_id]"
+                      dataType="ui1"
+                      name="staff_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[store_id]"
+                      dataType="ui1"
+                      name="store_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="45"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="45"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[picture]"
+                      dataType="image"
+                      name="picture" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[active]"
+                      dataType="bool"
+                      name="active" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[username]"
+                      codePage="1251"
+                      dataType="str"
+                      length="16"
+                      name="username" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[password]"
+                      codePage="1251"
+                      dataType="str"
+                      length="40"
+                      name="password" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].ExternalColumns[last_update]"
+                      dataType="dbTimeStamp"
+                      name="last_update" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[staff_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[staff_id]"
+                      name="staff_id" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="45"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="45"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[store_id]"
+                      name="store_id" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Error Output].Columns[address_id]"
+                      name="address_id" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Warehouse\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Left Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output].Columns[address_id]" />
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Left Input].Columns[bussiness_store_id]"
+                      cachedDataType="ui1"
+                      cachedName="bussiness_store_id"
+                      lineageId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output].Columns[bussiness_store_id]" />
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Left Input].Columns[staff_id]"
+                      cachedDataType="ui1"
+                      cachedName="staff_id"
+                      lineageId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output].Columns[staff_id]" />
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Left Input].Columns[store_id]"
+                      cachedDataType="ui1"
+                      cachedName="store_id"
+                      lineageId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output].Columns[store_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Right Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[address_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[bussiness_store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[bussiness_store_id]"
+                      name="bussiness_store_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Left Input].Columns[bussiness_store_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[staff_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[staff_id]"
+                      name="staff_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Left Input].Columns[staff_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[address_id]"
+                      name="address_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Right Input].Columns[address_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[store_id]"
+                      name="store_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Left Input].Columns[store_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Warehouse\Merge Join 1"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Left Input].Columns[staff_id]"
+                      cachedDataType="ui1"
+                      cachedName="staff_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output].Columns[staff_id]" />
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Left Input].Columns[bussiness_store_id]"
+                      cachedDataType="ui1"
+                      cachedName="bussiness_store_id"
+                      lineageId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output].Columns[bussiness_store_id]" />
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Left Input].Columns[store_id]"
+                      cachedDataType="ui1"
+                      cachedName="store_id"
+                      lineageId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output].Columns[store_id]" />
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Left Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      lineageId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output].Columns[address_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Right Input].Columns[staff_id]"
+                      cachedDataType="ui1"
+                      cachedName="staff_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output].Columns[staff_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[bussiness_store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[bussiness_store_id]"
+                      name="bussiness_store_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Left Input].Columns[bussiness_store_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[store_id]"
+                      name="store_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Left Input].Columns[store_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[staff_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[staff_id]"
+                      name="staff_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Right Input].Columns[staff_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[address_id]"
+                      name="address_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Left Input].Columns[address_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Warehouse\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[store_dm]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading into store Warehouse\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{DC247AC0-66CE-48B2-95D0-A7DF605EE4FA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.Sakila_WH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StartDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartDate"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      lineageId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[StartDate]" />
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[address_id]"
+                      lineageId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[address_id]" />
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[bussiness_store_id]"
+                      cachedDataType="ui1"
+                      cachedName="bussiness_store_id"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[bussiness_store_id]"
+                      lineageId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[bussiness_store_id]" />
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[staff_id]"
+                      cachedDataType="ui1"
+                      cachedName="staff_id"
+                      externalMetadataColumnId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[staff_id]"
+                      lineageId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[staff_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[address_id]"
+                      dataType="i2"
+                      name="address_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      dataType="dbTimeStamp"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
+                      dataType="dbTimeStamp"
+                      name="EndDate" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[staff_id]"
+                      dataType="ui1"
+                      name="staff_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[store_id]"
+                      dataType="ui1"
+                      name="store_id" />
+                    <externalMetadataColumn
+                      refId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[bussiness_store_id]"
+                      dataType="ui1"
+                      name="bussiness_store_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Warehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Warehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading into store Warehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Warehouse\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into store Warehouse\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort.Inputs[Sort Input].Columns[bussiness_store_id]"
+                      cachedDataType="ui1"
+                      cachedName="bussiness_store_id"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[bussiness_store_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort.Inputs[Sort Input].Columns[staff_id]"
+                      cachedDataType="ui1"
+                      cachedName="staff_id"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[staff_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort.Inputs[Sort Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[address_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort.Inputs[Sort Input].Columns[store_id]"
+                      cachedDataType="ui1"
+                      cachedName="store_id"
+                      lineageId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[store_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output].Columns[bussiness_store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output].Columns[bussiness_store_id]"
+                      name="bussiness_store_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[bussiness_store_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output].Columns[staff_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output].Columns[staff_id]"
+                      name="staff_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[staff_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output].Columns[address_id]"
+                      name="address_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[address_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output].Columns[store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output].Columns[store_id]"
+                      name="store_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output].Columns[store_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Warehouse\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into store Warehouse\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Inputs[Sort Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[address_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Inputs[Sort Input].Columns[bussiness_address_id]"
+                      cachedDataType="i2"
+                      cachedName="bussiness_address_id"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[bussiness_address_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Inputs[Sort Input].Columns[address]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="address"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[address]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Inputs[Sort Input].Columns[district]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="district"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[district]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Inputs[Sort Input].Columns[city]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[city]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Inputs[Sort Input].Columns[country]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Inputs[Sort Input].Columns[postal_code]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="postal_code"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[postal_code]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Inputs[Sort Input].Columns[StartDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartDate"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[StartDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Inputs[Sort Input].Columns[EndDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EndDate"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[EndDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[address_id]"
+                      name="address_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[address_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[bussiness_address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[bussiness_address_id]"
+                      name="bussiness_address_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[bussiness_address_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[address]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[address]"
+                      name="address">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[address]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[district]"
+                      codePage="1251"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[district]"
+                      name="district">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[district]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[city]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[city]"
+                      name="city">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[city]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[country]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[country]"
+                      name="country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[postal_code]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[postal_code]"
+                      name="postal_code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[postal_code]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[StartDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[StartDate]"
+                      name="StartDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[StartDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[EndDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output].Columns[EndDate]"
+                      name="EndDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output].Columns[EndDate]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Warehouse\Sort 2"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into store Warehouse\Sort 2.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 2.Inputs[Sort Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[address_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 2.Inputs[Sort Input].Columns[staff_id]"
+                      cachedDataType="ui1"
+                      cachedName="staff_id"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[staff_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 2.Inputs[Sort Input].Columns[store_id]"
+                      cachedDataType="ui1"
+                      cachedName="store_id"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[store_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 2.Inputs[Sort Input].Columns[first_name]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="first_name"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[first_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 2.Inputs[Sort Input].Columns[last_name]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="last_name"
+                      lineageId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[last_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output].Columns[address_id]"
+                      name="address_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[address_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output].Columns[staff_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output].Columns[staff_id]"
+                      name="staff_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[staff_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output].Columns[store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output].Columns[store_id]"
+                      name="store_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[store_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output].Columns[first_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="45"
+                      lineageId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output].Columns[first_name]"
+                      name="first_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[first_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output].Columns[last_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="45"
+                      lineageId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output].Columns[last_name]"
+                      name="last_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output].Columns[last_name]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Warehouse\Sort 3"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 3"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into store Warehouse\Sort 3.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 3.Inputs[Sort Input].Columns[bussiness_store_id]"
+                      cachedDataType="ui1"
+                      cachedName="bussiness_store_id"
+                      lineageId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[bussiness_store_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 3.Inputs[Sort Input].Columns[staff_id]"
+                      cachedDataType="ui1"
+                      cachedName="staff_id"
+                      lineageId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[staff_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 3.Inputs[Sort Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[address_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 3.Inputs[Sort Input].Columns[store_id]"
+                      cachedDataType="ui1"
+                      cachedName="store_id"
+                      lineageId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[store_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output].Columns[bussiness_store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output].Columns[bussiness_store_id]"
+                      name="bussiness_store_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[bussiness_store_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output].Columns[staff_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output].Columns[staff_id]"
+                      name="staff_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[staff_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output].Columns[address_id]"
+                      name="address_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[address_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output].Columns[store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output].Columns[store_id]"
+                      name="store_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output].Columns[store_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading into store Warehouse\Sort 4"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 4"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Loading into store Warehouse\Sort 4.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 4.Inputs[Sort Input].Columns[bussiness_store_id]"
+                      cachedDataType="ui1"
+                      cachedName="bussiness_store_id"
+                      lineageId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[bussiness_store_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 4.Inputs[Sort Input].Columns[store_id]"
+                      cachedDataType="ui1"
+                      cachedName="store_id"
+                      lineageId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[store_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 4.Inputs[Sort Input].Columns[StartDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartDate"
+                      lineageId="Package\Loading into store Warehouse\Derived Column.Outputs[Derived Column Output].Columns[StartDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 4.Inputs[Sort Input].Columns[address_id]"
+                      cachedDataType="i2"
+                      cachedName="address_id"
+                      lineageId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[address_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Loading into store Warehouse\Sort 4.Inputs[Sort Input].Columns[staff_id]"
+                      cachedDataType="ui1"
+                      cachedName="staff_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[staff_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[bussiness_store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[bussiness_store_id]"
+                      name="bussiness_store_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[bussiness_store_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[store_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[store_id]"
+                      name="store_id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[store_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[StartDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[StartDate]"
+                      name="StartDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Derived Column.Outputs[Derived Column Output].Columns[StartDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[address_id]"
+                      dataType="i2"
+                      lineageId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[address_id]"
+                      name="address_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[address_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[staff_id]"
+                      dataType="ui1"
+                      lineageId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output].Columns[staff_id]"
+                      name="staff_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output].Columns[staff_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Loading into store Warehouse.Paths[Derived Column Output]"
+              endId="Package\Loading into store Warehouse\Sort 4.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Loading into store Warehouse\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Loading into store Warehouse.Paths[Merge Join Output]"
+              endId="Package\Loading into store Warehouse\Sort 3.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Loading into store Warehouse\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Loading into store Warehouse.Paths[Merge Join Output1]"
+              endId="Package\Loading into store Warehouse\Derived Column.Inputs[Derived Column Input]"
+              name="Merge Join Output"
+              startId="Package\Loading into store Warehouse\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Loading into store Warehouse.Paths[OLE DB Source Output]"
+              endId="Package\Loading into store Warehouse\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Loading into store Warehouse\Loading from staging.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Loading into store Warehouse.Paths[OLE DB Source Output1]"
+              endId="Package\Loading into store Warehouse\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Loading into store Warehouse\Loading from wh address.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Loading into store Warehouse.Paths[OLE DB Source Output2]"
+              endId="Package\Loading into store Warehouse\Sort 2.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Loading into store Warehouse\Loading from wh staff.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Loading into store Warehouse.Paths[Sort Output]"
+              endId="Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Loading into store Warehouse\Sort 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\Loading into store Warehouse.Paths[Sort Output1]"
+              endId="Package\Loading into store Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Loading into store Warehouse\Sort 4.Outputs[Sort Output]" />
+            <path
+              refId="Package\Loading into store Warehouse.Paths[Sort Output2]"
+              endId="Package\Loading into store Warehouse\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Loading into store Warehouse\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Loading into store Warehouse.Paths[Sort Output3]"
+              endId="Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Loading into store Warehouse\Sort 3.Outputs[Sort Output]" />
+            <path
+              refId="Package\Loading into store Warehouse.Paths[Sort Output4]"
+              endId="Package\Loading into store Warehouse\Merge Join 1.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Loading into store Warehouse\Sort 2.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Stagging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{41cc001e-49fe-4ee9-aff4-0147a36876c1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Stagging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E18627C0-D448-4B02-810E-5603E81500FC}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE store_dm" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{645280e8-56eb-4c7e-ab57-39417ef65cd2}"
+      DTS:From="Package\Loading into store Stagging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Loading into store Warehouse" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{c794d628-f08d-4dcf-8197-fcf0376cb04f}"
+      DTS:From="Package\Loading into store Warehouse"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Truncate Stagging" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Truncate Stagging"
+          TopLeft="328.055540909647,235.111109889701" />
+        <NodeLayout
+          Size="216.8,41.6"
+          Id="Package\Loading into store Warehouse"
+          TopLeft="304.999986613791,133.955555041278" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="411.527763761719,175.555555041278">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.555554848423"
+              Start="0,0"
+              End="0,52.055554848423">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.055554848423" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Loading into store Stagging"
+          TopLeft="314.722208304815,57.40000001808" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="415.261097459303,99.00000001808">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.955555023198"
+              Start="0,0"
+              End="0,27.455555023198">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.455555023198" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Loading into store Warehouse">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Loading into store Warehouse\Sort 4"
+          TopLeft="632.937053505565,515.160831993693" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Loading into store Warehouse\Derived Column"
+          TopLeft="611.73076011527,445.769224126751" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Loading into store Warehouse\Merge Join"
+          TopLeft="392.772721501914,246.409087319266" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Loading into store Warehouse\Loading from staging"
+          TopLeft="173.090906511654,95.3216769012746" />
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Loading into store Warehouse\Loading from wh address"
+          TopLeft="487.636356370016,94.4181808848272" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Loading into store Warehouse\Sort 1"
+          TopLeft="502.636355550452,168.951513699865" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Loading into store Warehouse\OLE DB Destination"
+          TopLeft="598.896844222594,592.578662975398" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Loading into store Warehouse\Sort"
+          TopLeft="257.552443714617,182.783214710601" />
+        <EdgeLayout
+          Id="Package\Loading into store Warehouse.Paths[OLE DB Source Output1]"
+          TopLeft="585.236356370016,136.018180884827">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29.4000008195641,32.9333328150378"
+              Start="0,0"
+              End="-29.4000008195641,25.4333328150378">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.4666664075189" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.4666664075189"
+                    Point2="0,16.4666664075189"
+                    Point3="-4,16.4666664075189" />
+                  <mssgle:LineSegment
+                    End="-25.4000008195641,16.4666664075189" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.4000008195641,16.4666664075189"
+                    Point2="-29.4000008195641,16.4666664075189"
+                    Point3="-29.4000008195641,20.4666664075189" />
+                  <mssgle:LineSegment
+                    End="-29.4000008195641,25.4333328150378" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into store Warehouse.Paths[Sort Output]"
+          TopLeft="555.836355550452,210.551513699865">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98.2636340485378,35.8575736194012"
+              Start="0,0"
+              End="-98.2636340485378,28.3575736194012">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.9287868097006" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.9287868097006"
+                    Point2="0,17.9287868097006"
+                    Point3="-4,17.9287868097006" />
+                  <mssgle:LineSegment
+                    End="-94.2636340485378,17.9287868097006" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-94.2636340485378,17.9287868097006"
+                    Point2="-98.2636340485378,17.9287868097006"
+                    Point3="-98.2636340485378,21.9287868097006" />
+                  <mssgle:LineSegment
+                    End="-98.2636340485378,28.3575736194012" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into store Warehouse.Paths[Sort Output2]"
+          TopLeft="355.152443714617,203.583214710601">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37.6202777872969,63.625872608665"
+              Start="0,0"
+              End="30.1202777872969,63.625872608665">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="14.8101388936484,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8101388936484,0"
+                    Point2="18.8101388936484,0"
+                    Point3="18.8101388936484,4" />
+                  <mssgle:LineSegment
+                    End="18.8101388936484,59.625872608665" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.8101388936484,59.625872608665"
+                    Point2="18.8101388936484,63.625872608665"
+                    Point3="22.8101388936484,63.625872608665" />
+                  <mssgle:LineSegment
+                    End="30.1202777872969,63.625872608665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into store Warehouse.Paths[Sort Output1]"
+          TopLeft="685.31694886408,556.760831993693">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.8178309817052"
+              Start="0,0"
+              End="0,28.3178309817052">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.3178309817052" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into store Warehouse.Paths[Derived Column Output]"
+          TopLeft="687.133906810418,487.369224126751">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.7916078669419"
+              Start="0,0"
+              End="0,20.2916078669419">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2916078669419" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into store Warehouse.Paths[OLE DB Source Output]"
+          TopLeft="260.690906511654,136.921676901275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.6615372029635,45.8615378093261"
+              Start="0,0"
+              End="45.6615372029635,38.3615378093261">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.9307689046631" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.9307689046631"
+                    Point2="0,22.9307689046631"
+                    Point3="4,22.9307689046631" />
+                  <mssgle:LineSegment
+                    End="41.6615372029635,22.9307689046631" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.6615372029635,22.9307689046631"
+                    Point2="45.6615372029635,22.9307689046631"
+                    Point3="45.6615372029635,26.9307689046631" />
+                  <mssgle:LineSegment
+                    End="45.6615372029635,38.3615378093261" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Loading into store Warehouse\Sort 3"
+          TopLeft="509.999992400408,319.090904336084" />
+        <EdgeLayout
+          Id="Package\Loading into store Warehouse.Paths[Merge Join Output]"
+          TopLeft="457.572721501914,288.009087319266">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.627270898494,31.0818170168184"
+              Start="0,0"
+              End="105.627270898494,23.5818170168184">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5409085084092" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5409085084092"
+                    Point2="0,15.5409085084092"
+                    Point3="4,15.5409085084092" />
+                  <mssgle:LineSegment
+                    End="101.627270898494,15.5409085084092" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101.627270898494,15.5409085084092"
+                    Point2="105.627270898494,15.5409085084092"
+                    Point3="105.627270898494,19.5409085084092" />
+                  <mssgle:LineSegment
+                    End="105.627270898494,23.5818170168184" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Loading into store Warehouse\Merge Join 1"
+          TopLeft="696.999989613891,338.999994948506" />
+        <EdgeLayout
+          Id="Package\Loading into store Warehouse.Paths[Sort Output3]"
+          TopLeft="616.399992400408,339.890904336084">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.5999972134825,19.9090906124224"
+              Start="0,0"
+              End="73.0999972134825,19.9090906124224">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="36.2999986067413,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.2999986067413,0"
+                    Point2="40.2999986067413,0"
+                    Point3="40.2999986067413,4" />
+                  <mssgle:LineSegment
+                    End="40.2999986067413,15.9090906124224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40.2999986067413,15.9090906124224"
+                    Point2="40.2999986067413,19.9090906124224"
+                    Point3="44.2999986067413,19.9090906124224" />
+                  <mssgle:LineSegment
+                    End="73.0999972134825,19.9090906124224" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Loading into store Warehouse\Sort 2"
+          TopLeft="793.999988168478,186.599997541308" />
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\Loading into store Warehouse\Loading from wh staff"
+          TopLeft="754.909079660069,93.8727249169891" />
+        <EdgeLayout
+          Id="Package\Loading into store Warehouse.Paths[OLE DB Source Output2]"
+          TopLeft="845.454533914273,135.472724916989">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.1272726243193"
+              Start="0,0"
+              End="0,43.6272726243193">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.6272726243193" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into store Warehouse.Paths[Sort Output4]"
+          TopLeft="847.199988168478,228.199997541308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-80.9999985545875,110.799997407198"
+              Start="0,0"
+              End="-80.9999985545875,103.299997407198">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.399998703599" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.399998703599"
+                    Point2="0,55.399998703599"
+                    Point3="-4,55.399998703599" />
+                  <mssgle:LineSegment
+                    End="-76.9999985545875,55.399998703599" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-76.9999985545875,55.399998703599"
+                    Point2="-80.9999985545875,55.399998703599"
+                    Point3="-80.9999985545875,59.399998703599" />
+                  <mssgle:LineSegment
+                    End="-80.9999985545875,103.299997407198" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into store Warehouse.Paths[Merge Join Output1]"
+          TopLeft="766.199989613891,380.599994948506">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-78.0692294986208,65.1692291782446"
+              Start="0,0"
+              End="-78.0692294986208,57.6692291782446">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5846145891223" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5846145891223"
+                    Point2="0,32.5846145891223"
+                    Point3="-4,32.5846145891223" />
+                  <mssgle:LineSegment
+                    End="-74.0692294986208,32.5846145891223" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-74.0692294986208,32.5846145891223"
+                    Point2="-78.0692294986208,32.5846145891223"
+                    Point3="-78.0692294986208,36.5846145891223" />
+                  <mssgle:LineSegment
+                    End="-78.0692294986208,57.6692291782446" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Loading into store Stagging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Loading into store Stagging\Sort"
+          TopLeft="474.166640759344,202.799998589754" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Loading into store Stagging\OLE DB Source"
+          TopLeft="295.833317169713,146.466665937437" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Loading into store Stagging\OLE DB Destination"
+          TopLeft="464.166641305719,272.999998101592" />
+        <EdgeLayout
+          Id="Package\Loading into store Stagging.Paths[OLE DB Source Output]"
+          TopLeft="447.833317169713,167.266665937437">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.3333235896307,56.3333326523172"
+              Start="0,0"
+              End="18.8333235896307,56.3333326523172">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="9.16666179481533,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.16666179481533,0"
+                    Point2="13.1666617948153,0"
+                    Point3="13.1666617948153,4" />
+                  <mssgle:LineSegment
+                    End="13.1666617948153,52.3333326523172" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.1666617948153,52.3333326523172"
+                    Point2="13.1666617948153,56.3333326523172"
+                    Point3="17.1666617948153,56.3333326523172" />
+                  <mssgle:LineSegment
+                    End="18.8333235896307,56.3333326523172" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading into store Stagging.Paths[Sort Output]"
+          TopLeft="522.966640759344,244.399998589754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.8000005463756,28.599999511838"
+              Start="0,0"
+              End="26.8000005463756,21.099999511838">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.299999755919" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.299999755919"
+                    Point2="0,14.299999755919"
+                    Point3="4,14.299999755919" />
+                  <mssgle:LineSegment
+                    End="22.8000005463756,14.299999755919" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.8000005463756,14.299999755919"
+                    Point2="26.8000005463756,14.299999755919"
+                    Point3="26.8000005463756,18.299999755919" />
+                  <mssgle:LineSegment
+                    End="26.8000005463756,21.099999511838" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

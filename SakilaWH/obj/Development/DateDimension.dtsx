@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/19/2024 7:43:53 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-UJE1B5J"
+  DTS:CreatorName="DESKTOP-UJE1B5J\Admin"
+  DTS:DTSID="{0C9550F3-EDCB-498B-A64C-0D565B176D71}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DateDimension"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{09524B65-D05A-4FB8-9243-02B57211F482}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Loading Date Dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D8823D3A-1AA7-4617-98D3-5F84933EB00E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loading Date Dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Loading Date Dimension\Filling out DateDimension"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Filling out DateDimension"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DELETE FROM DateDimension;
+
+DECLARE 
+    @Start_Date datetime,
+    @End_Date datetime
+
+SET @Start_Date = '1900-12-31 00:00:00.000'
+SET @End_Date = '2100-12-31 00:00:00.000'
+
+WHILE (@Start_Date &lt; @End_Date)
+BEGIN
+    SET @Start_Date = DATEADD(day, 1, @Start_Date)
+    INSERT INTO DateDimension
+    VALUES (
+        @Start_Date,
+        DATEPART(year, @Start_Date),
+        CASE
+            WHEN DATEPART(month, @Start_Date) BETWEEN 1 AND 6 THEN 1
+            WHEN DATEPART(month, @Start_Date) BETWEEN 7 AND 12 THEN 2
+        END,
+        DATEPART(quarter , @Start_Date),
+        DATEPART(month, @Start_Date),
+        DATEPART(day , @Start_Date),
+        CASE
+            WHEN DATEPART(day , @Start_Date) BETWEEN 1 AND 7 THEN 1
+            WHEN DATEPART(day , @Start_Date) BETWEEN 8 AND 14 THEN 2
+            WHEN DATEPART(day , @Start_Date) BETWEEN 15 AND 21 THEN 3
+            WHEN DATEPART(day , @Start_Date) BETWEEN 22 AND 28 THEN 4
+            WHEN DATEPART(day , @Start_Date) BETWEEN 29 AND 31 THEN 5
+        END
+    )
+END
+
+SELECT * FROM DateDimension</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading Date Dimension\Filling out DateDimension.Connections[OleDbConnection]"
+                  connectionManagerID="{DC247AC0-66CE-48B2-95D0-A7DF605EE4FA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UJE1B5J.Sakila_WH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[FullDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[FullDate]"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[FullDate]"
+                      name="FullDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[Year]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[HalfYear]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[HalfYear]"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[HalfYear]"
+                      name="HalfYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      name="Quarter"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[MonthNumOfYear]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[MonthNumOfYear]"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[MonthNumOfYear]"
+                      name="MonthNumOfYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[DayNumOfMonth]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[DayNumOfMonth]"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[DayNumOfMonth]"
+                      name="DayNumOfMonth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[WeekNumOfMonth]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[WeekNumOfMonth]"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].Columns[WeekNumOfMonth]"
+                      name="WeekNumOfMonth"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[DateID]"
+                      dataType="i4"
+                      name="DateID" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[FullDate]"
+                      dataType="dbTimeStamp"
+                      name="FullDate" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      dataType="i2"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[HalfYear]"
+                      dataType="ui1"
+                      name="HalfYear" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      dataType="ui1"
+                      name="Quarter" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[MonthNumOfYear]"
+                      dataType="ui1"
+                      name="MonthNumOfYear" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[DayNumOfMonth]"
+                      dataType="ui1"
+                      name="DayNumOfMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Output].ExternalColumns[WeekNumOfMonth]"
+                      dataType="ui1"
+                      name="WeekNumOfMonth" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[FullDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[FullDate]"
+                      name="FullDate" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      dataType="i2"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[HalfYear]"
+                      dataType="ui1"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[HalfYear]"
+                      name="HalfYear" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      dataType="ui1"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      name="Quarter" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[MonthNumOfYear]"
+                      dataType="ui1"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[MonthNumOfYear]"
+                      name="MonthNumOfYear" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[DayNumOfMonth]"
+                      dataType="ui1"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[DayNumOfMonth]"
+                      name="DayNumOfMonth" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[WeekNumOfMonth]"
+                      dataType="ui1"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[WeekNumOfMonth]"
+                      name="WeekNumOfMonth" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading Date Dimension\Filling out DateDimension.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\Loading Date Dimension"
+          TopLeft="276.666651550267,101.399999294877" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Loading Date Dimension">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="196.8,41.6"
+          Id="Package\Loading Date Dimension\Filling out DateDimension"
+          TopLeft="280.833317989277,144.890908083356" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Loading Date Dimension\Filling out DateDimension">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

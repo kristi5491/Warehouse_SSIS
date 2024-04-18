@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-UJE1B5J.sakila"
+  DTS:DTSID="{AD0BE5F6-8FAC-4C8E-AB85-B14A396D1B91}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-UJE1B5J;Initial Catalog=sakila;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SakilaWH-{AD0BE5F6-8FAC-4C8E-AB85-B14A396D1B91}DESKTOP-UJE1B5J.sakila;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
